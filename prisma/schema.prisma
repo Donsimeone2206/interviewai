@@ -103,3 +103,12 @@ model IndustryInsight {
 
   @@index([industry])
 }
+
+model Roadmap {
+  id         String   @id @default(uuid())
+  title      String
+  slug       String   @unique
+  categories Json     // Store structured data as JSON
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
